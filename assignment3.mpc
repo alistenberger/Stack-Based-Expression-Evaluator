@@ -1,7 +1,5 @@
-// $Id: assignment2.mpc 378 2010-02-07 22:09:38Z hillj $
-
-project (assignment2) {
-  exename = assignment2
+project (assignment3) {
+  exename = assignment3
   install = .
  
   specific (make, gnuace) {
@@ -18,5 +16,6 @@ project (assignment2) {
     Queue.h
     Array.h
     Base_Array.h
+    ArrayIterator.h
   }
 }
