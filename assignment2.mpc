@@ -1,0 +1,22 @@
+// $Id: assignment2.mpc 378 2010-02-07 22:09:38Z hillj $
+
+project (assignment2) {
+  exename = assignment2
+  install = .
+ 
+  specific (make, gnuace) {
+    compile_flags += -g -std=c++11
+  }
+
+  Source_Files {
+    driver.cpp
+  }
+
+  Template_Files {
+    Fixed_Array.h
+    Stack.h
+    Queue.h
+    Array.h
+    Base_Array.h
+  }
+}

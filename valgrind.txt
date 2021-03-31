@@ -1,0 +1,218 @@
+alistenberger@8CZV003:~/school/csci36300/project2/cs36300-spring2021-composition$ valgrind  --leak-check=yes ./assignment2
+==4110== Memcheck, a memory error detector
+==4110== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4110== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4110== Command: ./assignment2
+==4110==
+==4110== error calling PR_SET_PTRACER, vgdb might block
+Compiled successfully
+==4110== Invalid write of size 1
+==4110==    at 0x10AEC0: Base_Array<char>::set(unsigned long, char) (Base_Array.cpp:130)
+==4110==    by 0x10B80F: Queue<char>::enqueue(char) (Queue.cpp:68)
+==4110==    by 0x10A9AF: test_queue() (driver.cpp:37)
+==4110==    by 0x10AC10: main (driver.cpp:77)
+==4110==  Address 0x4da5ec1 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A8F9: Queue (Queue.cpp:7)
+==4110==    by 0x10A8F9: test_queue() (driver.cpp:31)
+==4110==    by 0x10AC10: main (driver.cpp:77)
+==4110==
+==4110== Invalid read of size 1
+==4110==    at 0x10ACFF: Base_Array<char>::reverse() (Base_Array.cpp:228)
+==4110==    by 0x10B863: Queue<char>::dequeue() (Queue.cpp:93)
+==4110==    by 0x10A9B7: test_queue() (driver.cpp:38)
+==4110==    by 0x10AC10: main (driver.cpp:77)
+==4110==  Address 0x4da5ec1 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A8F9: Queue (Queue.cpp:7)
+==4110==    by 0x10A8F9: test_queue() (driver.cpp:31)
+==4110==    by 0x10AC10: main (driver.cpp:77)
+==4110==
+==4110== Invalid write of size 1
+==4110==    at 0x10AD06: Base_Array<char>::reverse() (Base_Array.cpp:229)
+==4110==    by 0x10B863: Queue<char>::dequeue() (Queue.cpp:93)
+==4110==    by 0x10A9B7: test_queue() (driver.cpp:38)
+==4110==    by 0x10AC10: main (driver.cpp:77)
+==4110==  Address 0x4da5ec1 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A8F9: Queue (Queue.cpp:7)
+==4110==    by 0x10A8F9: test_queue() (driver.cpp:31)
+==4110==    by 0x10AC10: main (driver.cpp:77)
+==4110==
+Queue test successful
+==4110== Invalid write of size 4
+==4110==    at 0x10B024: Base_Array<int>::set(unsigned long, int) (Base_Array.cpp:130)
+==4110==    by 0x10BDF9: Stack<int>::push(int) (Stack.cpp:51)
+==4110==    by 0x10AAF5: test_stack() (driver.cpp:48)
+==4110==    by 0x10AC31: main (driver.cpp:79)
+==4110==  Address 0x4da6154 is 0 bytes after a block of size 4 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10AA9A: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10AA9A: Array (Array.cpp:16)
+==4110==    by 0x10AA9A: Stack (Stack.cpp:14)
+==4110==    by 0x10AA9A: test_stack() (driver.cpp:45)
+==4110==    by 0x10AC31: main (driver.cpp:79)
+==4110==
+==4110== Invalid read of size 4
+==4110==    at 0x10B086: Base_Array<int>::get(unsigned long) const (Base_Array.cpp:115)
+==4110==    by 0x10B23D: Stack<int>::top() const (Stack.cpp:105)
+==4110==    by 0x10AB1E: test_stack() (driver.cpp:49)
+==4110==    by 0x10AC31: main (driver.cpp:79)
+==4110==  Address 0x4da6154 is 0 bytes after a block of size 4 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10AA9A: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10AA9A: Array (Array.cpp:16)
+==4110==    by 0x10AA9A: Stack (Stack.cpp:14)
+==4110==    by 0x10AA9A: test_stack() (driver.cpp:45)
+==4110==    by 0x10AC31: main (driver.cpp:79)
+==4110==
+Stack test successful
+Fixed array test successful
+==4110== Invalid write of size 1
+==4110==    at 0x10AEC0: Base_Array<char>::set(unsigned long, char) (Base_Array.cpp:130)
+==4110==    by 0x10A6DC: test_array() (driver.cpp:14)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6431 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid write of size 1
+==4110==    at 0x10AEC0: Base_Array<char>::set(unsigned long, char) (Base_Array.cpp:130)
+==4110==    by 0x10A6EE: test_array() (driver.cpp:15)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6432 is 1 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid write of size 1
+==4110==    at 0x10AEC0: Base_Array<char>::set(unsigned long, char) (Base_Array.cpp:130)
+==4110==    by 0x10A700: test_array() (driver.cpp:16)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6433 is 2 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid write of size 1
+==4110==    at 0x10AEC0: Base_Array<char>::set(unsigned long, char) (Base_Array.cpp:130)
+==4110==    by 0x10A712: test_array() (driver.cpp:17)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6434 is 3 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid read of size 1
+==4110==    at 0x10AF22: Base_Array<char>::get(unsigned long) const (Base_Array.cpp:115)
+==4110==    by 0x10A727: test_array() (driver.cpp:19)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6432 is 1 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid read of size 1
+==4110==    at 0x10ACFF: Base_Array<char>::reverse() (Base_Array.cpp:228)
+==4110==    by 0x10A754: test_array() (driver.cpp:20)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6434 is 3 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid write of size 1
+==4110==    at 0x10AD06: Base_Array<char>::reverse() (Base_Array.cpp:229)
+==4110==    by 0x10A754: test_array() (driver.cpp:20)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6434 is 3 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid read of size 1
+==4110==    at 0x10ACFB: Base_Array<char>::reverse() (Base_Array.cpp:227)
+==4110==    by 0x10A754: test_array() (driver.cpp:20)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6431 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid write of size 1
+==4110==    at 0x10AD02: Base_Array<char>::reverse() (Base_Array.cpp:228)
+==4110==    by 0x10A754: test_array() (driver.cpp:20)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6431 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid read of size 1
+==4110==    at 0x10B546: Array<char>::slice(unsigned long, unsigned long) const (Array.cpp:215)
+==4110==    by 0x10A79D: test_array() (driver.cpp:22)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6431 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid read of size 1
+==4110==    at 0x10B4C6: Array<char>::Array(Array<char> const&) (Array.cpp:55)
+==4110==    by 0x10A810: test_array() (driver.cpp:25)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6431 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+==4110== Invalid read of size 1
+==4110==    at 0x10B1FF: Array<char>::operator==(Array<char> const&) const (Array.cpp:146)
+==4110==    by 0x10A83E: test_array() (driver.cpp:26)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==  Address 0x4da6431 is 0 bytes after a block of size 1 alloc'd
+==4110==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4110==    by 0x10B185: Base_Array (Base_Array.cpp:8)
+==4110==    by 0x10B185: Array<char>::Array() (Array.cpp:16)
+==4110==    by 0x10A6AB: test_array() (driver.cpp:11)
+==4110==    by 0x10AC73: main (driver.cpp:83)
+==4110==
+Array test successful
+==4110==
+==4110== HEAP SUMMARY:
+==4110==     in use at exit: 0 bytes in 0 blocks
+==4110==   total heap usage: 24 allocs, 24 frees, 73,348 bytes allocated
+==4110==
+==4110== All heap blocks were freed -- no leaks are possible
+==4110==
+==4110== For lists of detected and suppressed errors, rerun with: -s
+==4110== ERROR SUMMARY: 25 errors from 17 contexts (suppressed: 0 from 0)
