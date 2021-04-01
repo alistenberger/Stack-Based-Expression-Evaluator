@@ -12,20 +12,20 @@
 #----------------------------------------------------------------------------
 
 
-all: assignment2
+all: assignment3
 
-depend: assignment2-depend
+depend: assignment3-depend
 
 clean generated realclean check-syntax $(CUSTOM_TARGETS):
-	@$(MAKE) -f Makefile.assignment2 $(@)
+	@$(MAKE) -f Makefile.assignment3 $(@)
 
-.PHONY: assignment2
-assignment2:
-	@$(MAKE) -f Makefile.assignment2 all
+.PHONY: assignment3
+assignment3:
+	@$(MAKE) -f Makefile.assignment3 all
 
-.PHONY: assignment2-depend
-assignment2-depend:
-	@$(MAKE) -f Makefile.assignment2 depend
+.PHONY: assignment3-depend
+assignment3-depend:
+	@$(MAKE) -f Makefile.assignment3 depend
 
 project_name_list:
-	@echo assignment2
+	@echo assignment3
