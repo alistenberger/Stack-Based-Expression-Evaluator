@@ -35,9 +35,17 @@ void test_queue ()
   assert (q1.is_empty ());
   q1.enqueue ('x');
   q1.enqueue ('y');
+  Queue <char> q2 = Queue <char> (q1);
+  Queue <char> q3 = q2;
   assert (q1.dequeue () == 'x');
   assert (q1.dequeue () == 'y');
   assert (q1.is_empty ());
+  assert (q2.dequeue () == 'x');
+  assert (q2.dequeue () == 'y');
+  assert (q2.is_empty ());
+  assert (q3.dequeue () == 'x');
+  assert (q3.dequeue () == 'y');
+  assert (q3.is_empty ());
 }
 
 void test_stack ()
@@ -47,10 +55,22 @@ void test_stack ()
   assert (s1.get (0) == 7);
   s1.push (5);
   assert (s1.top () == 5);
+  Stack <int> s2 = Stack <int> (s1);
+  Stack <int> s3 = s2;
+  assert (s3.top () == 5);
+  assert (s2.top () == 5);
   s1.pop ();
+  s2.pop ();
+  s3.pop ();
   assert (s1.top () == 7);
+  assert (s2.top () == 7);
+  assert (s3.top () == 7);
   s1.pop ();
+  s2.pop ();
+  s3.pop ();
   assert (s1.is_empty ());
+  assert (s2.is_empty ());
+  assert (s3.is_empty ());
 }
 
 void test_fixed_array () {

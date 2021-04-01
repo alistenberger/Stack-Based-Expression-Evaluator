@@ -25,9 +25,8 @@ Stack <T>::Stack (const Stack & stack)
 current_size_ (stack.arr_.size ())
 {
  for (int i = 0; i < stack.arr_.size (); i++) {
-    T *thisLocation = this->arr_.data_[i];
-    T *arrayLocation = stack.arr_.data_[i];
-    *thisLocation = *arrayLocation;
+    T arrayLocation = stack.arr_.get (i);
+    this->arr_.set (i, arrayLocation);
  }
 }
 
@@ -113,7 +112,7 @@ template <typename T>
 const Stack <T> & Stack <T>::operator = (const Stack & rhs)
 {
   this->current_size_ = rhs.current_size_;
-  *this->arr_ = *rhs.arr_;
+  this->arr_ = rhs.arr_;
   return *this;
 }
 

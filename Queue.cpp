@@ -18,9 +18,8 @@ Queue <T>::Queue (const Queue <T> & queue)
 current_size_ (queue.arr_.size ())
 {
  for (int i = 0; i < queue.arr_.size (); i++) {
-    T *thisLocation = this->arr_.data_[i];
-    T *arrayLocation = &queue.arr_.data_[i];
-    *thisLocation = *arrayLocation;
+    T arrayLocation = queue.arr_.get (i);
+    this->arr_.set (i, arrayLocation);
  }
 }
 
@@ -40,7 +39,7 @@ template <typename T>
 const Queue <T> & Queue <T>::operator = (const Queue & rhs)
 {
   this->current_size_ = rhs.current_size_;
-  *this->arr_ = *rhs.arr_;
+  this->arr_ = rhs.arr_;
   return *this;
 }
 
