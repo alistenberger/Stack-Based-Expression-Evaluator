@@ -16,5 +16,6 @@ project (assignment3) {
     Queue.h
     Array.h
     Base_Array.h
+    ArrayIterator.h
   }
 }
