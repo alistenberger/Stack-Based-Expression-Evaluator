@@ -1,7 +1,7 @@
 #include "Binary_Op_Command.h"
 
 Binary_Op_Command::Binary_Op_Command (Stack <int> & stack) 
-: stack_ (stack)
+: Expr_Command (stack)
 { 
   //Nothing here
 } 

@@ -6,6 +6,8 @@
 class Divide_Command : Binary_Op_Command
 {
 public:
+  Divide_Command (Stack <int> & stack);
+  ~Divide_Command (void);
   virtual int evaluate (int num1, int num2) const;
 };
 

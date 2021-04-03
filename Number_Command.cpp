@@ -1,13 +1,18 @@
 #include "Number_Command.h"
 
-Number_Command::Number_Command (Stack <int> & stack)
-: stack_ (stack)
+Number_Command::Number_Command (Stack <int> & stack, int number)
+: Expr_Command (stack, number)
 {
   //Nothing here
 }
 
-bool Number_Command::execute (int number)
+Number_Command::~Number_Command (void)
 {
-  stack_.push (number);
+  // Nothing allocated
+}
+
+bool Number_Command::execute (void)
+{
+  stack_.push (number_);
   return true;
 }

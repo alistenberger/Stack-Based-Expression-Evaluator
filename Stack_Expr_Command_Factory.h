@@ -8,7 +8,8 @@ class Stack_Expr_Command_Factory : public Expr_Command_Factory
 { 
 public: 
   Stack_Expr_Command_Factory (Stack <int> & stack); 
-  virtual Number_Command * create_number_command (int num); 
+  ~Stack_Expr_Command_Factory (void);
+  virtual Number_Command * create_number_command (Stack <int> & stack, int num); 
   virtual Add_Command * create_add_command (void); 
   virtual Subtract_Command * create_subtract_command (void); 
   virtual Multiply_Command * create_multiply_command (void);

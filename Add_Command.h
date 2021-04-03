@@ -6,6 +6,8 @@
 class Add_Command : Binary_Op_Command
 {
 public:
+  Add_Command (Stack <int> & stack);
+  ~Add_Command (void);
   virtual int evaluate (int num1, int num2) const;
 };
 

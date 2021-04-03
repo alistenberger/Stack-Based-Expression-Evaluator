@@ -40,8 +40,4 @@ private:
 };
 
 #include "ArrayIterator.cpp"
-<<<<<<< HEAD
 #endif // !defined _ARRAYITERATOR_H_
-=======
-#endif // !defined _ARRAYITERATOR_H_
->>>>>>> 2722a3cb63f8d9efde20875263641214a2ca34b6

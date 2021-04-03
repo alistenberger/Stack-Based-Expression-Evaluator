@@ -13,9 +13,7 @@ public:
   bool execute (void);
 
   virtual int evaluate (int num1, int num2) const = 0; 
- 
-private: 
-  Stack <int> & stack_; 
+
 }; 
 
 #endif // !defined _BINARY_OP_COMMAND_H_
