@@ -153,6 +153,13 @@ public:
    */
   virtual Array slice (size_t begin, size_t end) const;
 
+  /**
+   * The append() method resizes the array by 1 and adds a value onto the end
+   *
+   * @param[in]       element           The element to be added
+   */
+  void append (T element);
+
 private:
 
   /// Maximum size of the array.

@@ -4,6 +4,7 @@
 #include "Expr_Command_Factory.h"
 #include "Expr_Command.h"
 #include "Stack_Expr_Command_Factory.h"
+#include "Binary_Op_Command.h"
 #include "Number_Command.h"
 #include "Add_Command.h"
 #include "Subtract_Command.h"
@@ -17,6 +18,7 @@
 #include "Fixed_Array.h"
 #include <iostream>
 #include <sstream>
+#include <string>
 
 /**
  * @class Calculator
@@ -51,6 +53,8 @@ class Calculator
    * @retval        returns true on successful completion
    */
   bool evaluate_postfix (Array <Expr_Command *> & postfix);
+
+  int run (void);
 };
 
 #endif // !defined _CALCULATOR_H_

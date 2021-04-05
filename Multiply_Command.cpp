@@ -15,3 +15,8 @@ int Multiply_Command::evaluate (int num1, int num2) const
 {
   return num1*num2;
 }
+
+int Multiply_Command::getPrecedence (void) const
+{
+  return this->precedence;
+}

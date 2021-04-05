@@ -15,6 +15,7 @@ public:
   virtual Multiply_Command * create_multiply_command (void);
   virtual Divide_Command * create_divide_command (void);
   virtual Modulus_Command * create_modulus_command (void);
+  virtual Parenthesis_Command * create_parenthesis_command (bool response);
 private: 
   Stack <int> & stack_; 
 }; 

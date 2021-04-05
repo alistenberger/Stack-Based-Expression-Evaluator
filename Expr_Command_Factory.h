@@ -7,6 +7,7 @@
 #include "Multiply_Command.h"
 #include "Divide_Command.h"
 #include "Modulus_Command.h"
+#include "Parenthesis_Command.h"
 #include "Binary_Op_Command.h"
 
 class Expr_Command_Factory 
@@ -20,10 +21,12 @@ public:
   virtual Multiply_Command * create_multiply_command (void) = 0;
   virtual Divide_Command * create_divide_command (void) = 0;
   virtual Modulus_Command * create_modulus_command (void) = 0;
+  virtual Parenthesis_Command * create_parenthesis_command (bool response) = 0;
 private: 
   //Disallow usage of the following
   Expr_Command_Factory (const Expr_Command_Factory &); 
   const Expr_Command_Factory & operator = (const Expr_Command_Factory &); 
+  Stack <int> stack_;
 }; 
 
 #endif // !defined_EXPR_COMMAND_FACTORY_H_

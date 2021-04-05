@@ -221,4 +221,11 @@ Array <T> Array <T>::slice (size_t begin, size_t end) const
     } //end for
     return newArr; 
   } //end else
-} 
+}
+
+template <typename T>
+void Array <T>::append (T element)
+{
+  this->resize (this->size () + 1);
+  this->set (this->size () - 1, element);
+}

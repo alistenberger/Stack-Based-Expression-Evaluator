@@ -30,6 +30,22 @@ bool Calculator::infix_to_postfix (const std::string & infix, Expr_Command_Facto
     } else if (token == "%") {
       command = factory.create_modulus_command ();
     } else if (token == "(") {
-
+      command = factory.create_parenthesis_command (true);
+    } else if (token == ")") {
+      command = factory.create_parenthesis_command (false);
+    } else {
+      if (token[0] == '-' && std::isdigit(token[1]) || std::isdigit(token[0])) {
+        int tempInt = std::stoi (token);
+        command = factory.create_number_command (tempInt);
+      }
     }
+    tempStack.push (command);
+  }
+  while (!tempStack.is_empty ()) {
+    Expr_Command * tempCommand = tempStack.top ();
+    int topCommandPrecedence = 0;
+    int commandPrecedence = 0;
+    postfix.append (tempCommand);
+  }
 }
+
