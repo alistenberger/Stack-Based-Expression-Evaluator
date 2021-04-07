@@ -20,3 +20,7 @@ int Multiply_Command::getPrecedence (void) const
 {
   return this->precedence;
 }
+
+bool Multiply_Command::isOpeningParenthesis (void) {
+  return false;
+}

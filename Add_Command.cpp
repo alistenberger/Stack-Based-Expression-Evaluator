@@ -20,3 +20,7 @@ int Add_Command::getPrecedence (void) const
 {
   return this->precedence;
 }
+
+bool Add_Command::isOpeningParenthesis (void) {
+  return false;
+}

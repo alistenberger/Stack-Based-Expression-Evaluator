@@ -11,6 +11,7 @@ public:
   ~Number_Command (void);
   virtual bool execute (void);
   virtual int getPrecedence (void) const;
+  virtual bool isOpeningParenthesis (void);
 
 private:
   

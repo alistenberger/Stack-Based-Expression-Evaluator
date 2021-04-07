@@ -10,7 +10,7 @@ public:
   ~Add_Command (void);
   virtual int evaluate (int num1, int num2) const;
   virtual int getPrecedence (void) const;
-
+  virtual bool isOpeningParenthesis (void);
 protected:
   int precedence = 1;
 };

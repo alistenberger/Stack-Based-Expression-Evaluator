@@ -17,6 +17,8 @@ public:
 
   virtual int getPrecedence (void) const = 0;
 
+  virtual bool isOpeningParenthesis (void) = 0;
+
 protected:
   Stack <int> stack_;
   int number_;

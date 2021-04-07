@@ -11,9 +11,9 @@ Stack_Expr_Command_Factory::~Stack_Expr_Command_Factory (void)
   //Nothing Allocated
 }
 
-Number_Command * Stack_Expr_Command_Factory::create_number_command (Stack <int> & stack, int number)
+Number_Command * Stack_Expr_Command_Factory::create_number_command (int number)
 {
-  Number_Command * n1 = new Number_Command (stack_, number);
+  Number_Command * n1 = new Number_Command (this->stack_, number);
   return n1;
 }
 

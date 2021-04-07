@@ -20,3 +20,7 @@ int Divide_Command::getPrecedence (void) const
 {
   return this->precedence;
 }
+
+bool Divide_Command::isOpeningParenthesis (void) {
+  return false;
+}

@@ -10,6 +10,7 @@ public:
   ~Multiply_Command (void);
   virtual int evaluate (int num1, int num2) const;
   virtual int getPrecedence (void) const;
+  virtual bool isOpeningParenthesis (void);
 
 private:
   int precedence = 2;

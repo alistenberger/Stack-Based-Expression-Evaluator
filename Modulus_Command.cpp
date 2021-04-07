@@ -20,3 +20,7 @@ int Modulus_Command::getPrecedence (void) const
 {
   return this->precedence;
 }
+
+bool Modulus_Command::isOpeningParenthesis (void) {
+  return false;
+}
