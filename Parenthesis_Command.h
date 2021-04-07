@@ -9,7 +9,7 @@ class Parenthesis_Command : public Expr_Command
 public:
   Parenthesis_Command (Stack <int> & stack);
   ~Parenthesis_Command (void);
-  virtual bool execute (void);
+  virtual bool execute (Stack <int> & stack);
   bool isOpeningParenthesis (void);
   void setOpeningParenthesis (bool response);
   virtual int getPrecedence (void) const;

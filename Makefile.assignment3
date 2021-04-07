@@ -31,8 +31,8 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = driver$(OBJEXT)
-SRC           = driver.cpp
+OBJS          = main$(OBJEXT) Add_Command$(OBJEXT) Binary_Op_Command$(OBJEXT) Calculator$(OBJEXT) Divide_Command$(OBJEXT) Expr_Command_Factory$(OBJEXT) Expr_Command$(OBJEXT) Modulus_Command$(OBJEXT) Multiply_Command$(OBJEXT) Number_Command$(OBJEXT) Parenthesis_Command$(OBJEXT) Stack_Expr_Command_Factory$(OBJEXT) Subtract_Command$(OBJEXT)
+SRC           = main.cpp Add_Command.cpp Binary_Op_Command.cpp Calculator.cpp Divide_Command.cpp Expr_Command_Factory.cpp Expr_Command.cpp Modulus_Command.cpp Multiply_Command.cpp Number_Command.cpp Parenthesis_Command.cpp Stack_Expr_Command_Factory.cpp Subtract_Command.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = 
 DEPLIBS       = $(foreach lib, , $(foreach libpath, ., $(wildcard $(libpath)/lib$(lib).a)))
@@ -50,8 +50,44 @@ $(BIN): $(OBJS) $(DEPLIBS)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-driver$(OBJEXT): driver.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) driver.cpp
+main$(OBJEXT): main.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) main.cpp
+
+Add_Command$(OBJEXT): Add_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Add_Command.cpp
+
+Binary_Op_Command$(OBJEXT): Binary_Op_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Binary_Op_Command.cpp
+
+Calculator$(OBJEXT): Calculator.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Calculator.cpp
+
+Divide_Command$(OBJEXT): Divide_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Divide_Command.cpp
+
+Expr_Command_Factory$(OBJEXT): Expr_Command_Factory.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Expr_Command_Factory.cpp
+
+Expr_Command$(OBJEXT): Expr_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Expr_Command.cpp
+
+Modulus_Command$(OBJEXT): Modulus_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Modulus_Command.cpp
+
+Multiply_Command$(OBJEXT): Multiply_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Multiply_Command.cpp
+
+Number_Command$(OBJEXT): Number_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Number_Command.cpp
+
+Parenthesis_Command$(OBJEXT): Parenthesis_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Parenthesis_Command.cpp
+
+Stack_Expr_Command_Factory$(OBJEXT): Stack_Expr_Command_Factory.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Stack_Expr_Command_Factory.cpp
+
+Subtract_Command$(OBJEXT): Subtract_Command.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Subtract_Command.cpp
 
 clean:
 	-$(RM) $(OBJS)

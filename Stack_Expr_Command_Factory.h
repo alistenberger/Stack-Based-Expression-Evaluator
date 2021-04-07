@@ -16,6 +16,7 @@ public:
   virtual Divide_Command * create_divide_command (void);
   virtual Modulus_Command * create_modulus_command (void);
   virtual Parenthesis_Command * create_parenthesis_command (bool response);
+  virtual int getStackTop (void);
 private: 
   Stack <int> & stack_; 
 }; 

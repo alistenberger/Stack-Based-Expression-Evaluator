@@ -7,13 +7,13 @@ class Expr_Command
 {
 public: 
 
-  Expr_Command (Stack <int> & s);
+  Expr_Command (Stack <int> & stack);
 
   Expr_Command (Stack <int> & stack, int number);
 
   ~Expr_Command (void);
 
-  virtual bool execute (void) = 0; 
+  virtual bool execute (Stack <int> & stack) = 0; 
 
   virtual int getPrecedence (void) const = 0;
 
@@ -21,7 +21,6 @@ public:
 
 protected:
   Stack <int> stack_;
-  int number_;
 };
 
 

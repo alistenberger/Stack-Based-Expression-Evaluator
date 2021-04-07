@@ -11,10 +11,10 @@ Parenthesis_Command::~Parenthesis_Command (void)
   // Nothing allocated
 }
 
-bool Parenthesis_Command::execute (void)
+bool Parenthesis_Command::execute (Stack <int> & stack)
 {
-  if (isOpeningParenthesis) {
-    stack_.push ('(');
+  if (this->isOpeningParenthesis ()) {
+    stack.push ('(');
   }
   return true;
 }

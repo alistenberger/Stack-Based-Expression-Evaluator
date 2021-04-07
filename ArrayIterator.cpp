@@ -24,7 +24,7 @@ ArrayIterator <T>::~ArrayIterator (void)
 template <typename T> 
 bool ArrayIterator <T>::isDone (void) 
 { 
-  return this->index_ >= this->array_.cur_size_; 
+  return this->index_ >= this->array_.size (); 
 }
 
 //
@@ -44,7 +44,7 @@ void ArrayIterator <T>::advance (void)
 template <typename T> 
 T & ArrayIterator <T>::operator * (void) 
 { 
-  return this->array_.data_[this->index_];
+  return this->array_[this->index_];
 }
 
 //

@@ -19,37 +19,42 @@ Number_Command * Stack_Expr_Command_Factory::create_number_command (int number)
 
 Add_Command * Stack_Expr_Command_Factory::create_add_command (void)
 {
-  Add_Command * tempAdd = new Add_Command (stack_);
+  Add_Command * tempAdd = new Add_Command (this->stack_);
   return tempAdd;
 }
 
 Subtract_Command * Stack_Expr_Command_Factory::create_subtract_command (void)
 {
-  Subtract_Command * tempSub = new Subtract_Command (stack_);
+  Subtract_Command * tempSub = new Subtract_Command (this->stack_);
   return tempSub;
 }
 
 Multiply_Command * Stack_Expr_Command_Factory::create_multiply_command (void)
 {
-  Multiply_Command * tempMult = new Multiply_Command (stack_);
+  Multiply_Command * tempMult = new Multiply_Command (this->stack_);
   return tempMult;
 }
 
 Divide_Command * Stack_Expr_Command_Factory::create_divide_command (void)
 {
-  Divide_Command * tempDiv = new Divide_Command (stack_);
+  Divide_Command * tempDiv = new Divide_Command (this->stack_);
   return tempDiv;
 }
 
 Modulus_Command * Stack_Expr_Command_Factory::create_modulus_command (void)
 {
-  Modulus_Command * tempMod = new Modulus_Command (stack_);
+  Modulus_Command * tempMod = new Modulus_Command (this->stack_);
   return tempMod;
 }
 
 Parenthesis_Command * Stack_Expr_Command_Factory::create_parenthesis_command (bool response)
 {
-  Parenthesis_Command * tempParenthesis = new Parenthesis_Command (stack_);
+  Parenthesis_Command * tempParenthesis = new Parenthesis_Command (this->stack_);
   tempParenthesis->setOpeningParenthesis (response);
   return tempParenthesis;
+}
+
+int Stack_Expr_Command_Factory::getStackTop (void)
+{
+  return this->stack_.top ();
 }

@@ -29,6 +29,7 @@
 
 class Calculator
 {
+public: 
   /// Constructor
   Calculator (void);
   
@@ -53,7 +54,7 @@ class Calculator
    * 
    * @retval        returns true on successful completion
    */
-  bool evaluate_postfix (Array <Expr_Command *> & postfix);
+  bool evaluate_postfix (Array <Expr_Command *> & postfix, Stack <int> & stack);
 
   int run (void);
 };

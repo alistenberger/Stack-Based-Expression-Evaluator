@@ -9,7 +9,7 @@ class Number_Command : public Expr_Command
 public:
   Number_Command (Stack <int> & stack, int number);
   ~Number_Command (void);
-  virtual bool execute (void);
+  virtual bool execute (Stack <int> & stack);
   virtual int getPrecedence (void) const;
   virtual bool isOpeningParenthesis (void);
 

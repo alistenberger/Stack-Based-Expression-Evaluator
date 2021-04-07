@@ -10,7 +10,7 @@ public:
 
   Binary_Op_Command (Stack <int> & stack);
 
-  bool execute (void);
+  bool execute (Stack <int> & stack);
 
   virtual int evaluate (int num1, int num2) const = 0; 
 

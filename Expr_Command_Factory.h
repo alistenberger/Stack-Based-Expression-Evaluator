@@ -13,7 +13,7 @@
 class Expr_Command_Factory 
 { 
 public: 
-  Expr_Command_Factory (void);
+  Expr_Command_Factory ();
   virtual ~Expr_Command_Factory (void) = 0; 
   virtual Number_Command * create_number_command (int num) = 0; 
   virtual Add_Command * create_add_command (void) = 0; 
@@ -22,6 +22,7 @@ public:
   virtual Divide_Command * create_divide_command (void) = 0;
   virtual Modulus_Command * create_modulus_command (void) = 0;
   virtual Parenthesis_Command * create_parenthesis_command (bool response) = 0;
+  virtual int getStackTop (void) = 0;
 private: 
   //Disallow usage of the following
   Expr_Command_Factory (const Expr_Command_Factory &); 

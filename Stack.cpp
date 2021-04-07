@@ -141,7 +141,7 @@ void Stack <T>::clear (void)
     //SOLUTION Since array is no longer allocated, arr_ is now assigned to an empty array created on the stack
     //and garbage collection takes care of the old one
     
-  if (!((*this).is_empty ())) {
+  if (!this->is_empty ()) {
     this->arr_ = Array <T> ();
     this->current_size_ = 0;
   }
@@ -154,4 +154,18 @@ template <typename T>
 T Stack <T>::get (size_t index)
 {
   return this->arr_.get (index);
+}
+
+//
+//size
+//
+template <typename T>
+size_t Stack <T>::size (void) const {
+  return this->arr_.size ();
+}
+
+/// Returns the max_size_ of arr_
+template <typename T>
+size_t Stack <T>::max_size (void) const {
+  return this.arr_.max_size ();
 }

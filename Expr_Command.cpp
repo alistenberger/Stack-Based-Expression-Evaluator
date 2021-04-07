@@ -4,8 +4,7 @@
 // Initializing Constructor
 //
 Expr_Command::Expr_Command (Stack <int> & stack)
-: stack_ (stack),
-number_ (NULL)
+: stack_ (stack)
 {
   // Nothing here
 }
@@ -14,8 +13,7 @@ number_ (NULL)
 // Initializing constructor
 //
 Expr_Command::Expr_Command (Stack <int> & stack, int number)
-: stack_ (stack),
-number_ (number)
+: stack_ (stack)
 {
   // Nothing here
 }
