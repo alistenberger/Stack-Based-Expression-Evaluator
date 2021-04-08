@@ -41,39 +41,45 @@ bool Calculator::infix_to_postfix (const std::string & infix, Expr_Command_Facto
         command = factory.create_number_command (tempInt);
       }
     }
-    std::cout << "Command Precedence: " << command->getPrecedence () << std::endl;
+    std::cout << "Line 44 Command Precedence: " << command->getPrecedence () << std::endl;
     if (command->getPrecedence () == 0) {
       postfix.append (command);
-      std::cout << "Number command appended to postfix at address: " << std::endl;
-      std::cout << "Command of precedence: " << command->getPrecedence () << " applied to postfix. Size is now: " << postfix.size () << std::endl;
+      std::cout << "Line 47 Number command appended to postfix at address: " << std::endl;
+      std::cout << "Line 48 Command of precedence: " << command->getPrecedence () << " applied to postfix. Size is now: " << postfix.size () << std::endl;
       std::cout << command << std::endl;
     } else if (command->getPrecedence () == 3 && command->isOpeningParenthesis ()) {
       tempStack.push (command);
-      std::cout << tempStack.top () << std::endl;
+      std::cout << "Line 52 Pushing opening parenthesis onto stack at memory address: " << std::endl;
+      std::cout << tempStack.top () << "Line 53 The size of tempStack is now: " << tempStack.size () << std::endl;
     } else if (command->getPrecedence () == 3 && !command->isOpeningParenthesis ()) {
       Expr_Command * tempCommand = tempStack.top ();
       std::cout << tempStack.top () << std::endl;
       while (!tempCommand->isOpeningParenthesis ()) {
         postfix.append (tempCommand);
-        std::cout << "Command of precedence: " << tempCommand->getPrecedence () << " applied to postfix. Size is now: " << postfix.size () << std::endl;
+        std::cout << "Line 59 Command of precedence: " << tempCommand->getPrecedence () << " applied to postfix. Size is now: " << postfix.size () << std::endl;
         tempStack.pop ();
+        tempCommand = tempStack.top ();
       }
+      tempCommand = tempStack.top ();
+      tempStack.pop ();
+      delete tempCommand;
+      delete command;
     } else if (command->getPrecedence () == 2 || command->getPrecedence () == 1) {
       if (tempStack.is_empty ()) {
         tempStack.push (command);
-        std::cout << "Command of precedence: " << command->getPrecedence () << " applied to tempStack at address: " << std::endl;
+        std::cout << "Line 65 Command of precedence: " << command->getPrecedence () << " applied to tempStack at address: " << std::endl;
         std::cout << tempStack.top () << std::endl;
-      } else if (command->getPrecedence () > tempStack.top ()->getPrecedence ()) {
+      } else if (command->getPrecedence () > tempStack.top ()->getPrecedence () || tempStack.top ()->getPrecedence () == 3) {
         tempStack.push (command);
-        std::cout << "Command of precedence: " << command->getPrecedence () << " applied to tempStack at address: " << std::endl;
+        std::cout << "Line 69 Command of precedence: " << command->getPrecedence () << " applied to tempStack at address: " << std::endl;
         std::cout << tempStack.top () << std::endl;
       } else {
         while (!tempStack.is_empty () || command->getPrecedence () <= tempStack.top ()->getPrecedence ()) {
           Expr_Command * tempCommand = tempStack.top ();
           std::cout << tempStack.top () << std::endl;
           postfix.append (tempCommand);
-          std::cout << "Line 75 Command of precedence: " << tempCommand->getPrecedence () << " removed from stack and applied to postfix at address: " << std::endl;
-          std::cout << "Line 75 Command of precedence: " << tempCommand->getPrecedence () << " applied to postfix. Size is now: " << postfix.size () << std::endl;
+          std::cout << "Line 76 Command of precedence: " << tempCommand->getPrecedence () << " removed from stack and applied to postfix at address: " << std::endl;
+          std::cout << "Line 77 Command of precedence: " << tempCommand->getPrecedence () << " applied to postfix. Size is now: " << postfix.size () << std::endl;
           tempStack.pop ();
           if (tempStack.is_empty ()) {
             break;
@@ -81,14 +87,14 @@ bool Calculator::infix_to_postfix (const std::string & infix, Expr_Command_Facto
         }
         tempStack.push (command);
         std::cout << tempStack.top () << std::endl;
-        std::cout << "Command of precedence: " << command->getPrecedence () << " applied to tempStack at address: " << tempStack.top () << std::endl;
+        std::cout << "Line 85 Command of precedence: " << command->getPrecedence () << " applied to tempStack at address: " << tempStack.top () << std::endl;
       }
     }
   }
   while (!tempStack.is_empty ()) {
     Expr_Command * tempCommand = tempStack.top ();
     postfix.append (tempCommand);
-    std::cout << "Command of precedence: " << tempCommand->getPrecedence () << " popped from Stack and applied to postfix. Size is now: " << postfix.size () << std::endl;
+    std::cout << "Line 92 Command of precedence: " << tempCommand->getPrecedence () << " popped from Stack and applied to postfix. Size is now: " << postfix.size () << std::endl;
     tempStack.pop ();
   }
   std::cout << "Postfix size: " << postfix.size () << std::endl;
@@ -102,6 +108,7 @@ bool Calculator::evaluate_postfix (Array <Expr_Command *> & postfix, Stack <int>
     std::cout << "Executing command of precedence: " << (*iterator)->getPrecedence () << std::endl;
     (*iterator)->execute (stack);
     std::cout << &(*iterator) << std::endl;
+    delete (*iterator);
   }
   return true;
 }
@@ -117,15 +124,17 @@ int Calculator::run (void) {
     }
     std::cout << "Processing..." << std::endl;
     Stack <int> result;
-    Stack_Expr_Command_Factory factory (result);
-    Array <Expr_Command *> postfix;
+    Stack <int> factoryStack;
+    Stack_Expr_Command_Factory factory (factoryStack);
+    Array <Expr_Command *> * postfix = new Array <Expr_Command *> ();
     std::cout << "Passing equation to calculator" << std::endl;
-    this->infix_to_postfix (infix, factory, postfix);
+    this->infix_to_postfix (infix, factory, *postfix);
     std::cout << "Converting infix to postfix" << std::endl;
-    this->evaluate_postfix (postfix, result);
+    this->evaluate_postfix (*postfix, result);
     std::cout << "postfix evaluated" << std::endl;
     int answer = result.top ();
     std::cout << "Answer to equation: " << infix << " is: " << answer << std::endl;
+    delete postfix;
   }
   return 0;
 }

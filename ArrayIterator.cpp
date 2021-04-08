@@ -33,7 +33,7 @@ bool ArrayIterator <T>::isDone (void)
 template <typename T> 
 void ArrayIterator <T>::advance (void) 
 {
-  if (!(this->isDone ())) { 
+  if (!this->isDone ()) { 
     ++ this->index_;
   } 
 } 
