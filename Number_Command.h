@@ -7,15 +7,13 @@
 class Number_Command : public Expr_Command
 {
 public:
-  Number_Command (Stack <int> & stack, int number);
+  Number_Command (int number);
   ~Number_Command (void);
   virtual bool execute (Stack <int> & stack);
   virtual int getPrecedence (void) const;
   virtual bool isOpeningParenthesis (void);
 
 private:
-  
-  Stack <int> stack_;
   int number_;
   int precedence = 0;
 };

@@ -6,7 +6,7 @@
 class Modulus_Command : public Binary_Op_Command
 {
 public:
-  Modulus_Command (Stack <int> & stack);
+  Modulus_Command (void);
   ~Modulus_Command (void);
   virtual int evaluate (int num1, int num2) const;
   virtual int getPrecedence (void) const;

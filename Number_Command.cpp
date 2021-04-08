@@ -1,7 +1,7 @@
 #include "Number_Command.h"
 
-Number_Command::Number_Command (Stack <int> & stack, int number)
-: Expr_Command (stack),
+Number_Command::Number_Command (int number)
+: Expr_Command (),
 number_ (number)
 {
   //Nothing here

@@ -1,7 +1,7 @@
 #include "Multiply_Command.h"
 
-Multiply_Command::Multiply_Command (Stack <int> & stack)
-: Binary_Op_Command (stack)
+Multiply_Command::Multiply_Command (void)
+: Binary_Op_Command ()
 {
   // Nothing here
 }

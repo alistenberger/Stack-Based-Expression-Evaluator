@@ -1,7 +1,7 @@
 #include "Divide_Command.h"
 
-Divide_Command::Divide_Command (Stack <int> & stack)
-: Binary_Op_Command (stack)
+Divide_Command::Divide_Command (void)
+: Binary_Op_Command ()
 {
   // Nothing here
 }

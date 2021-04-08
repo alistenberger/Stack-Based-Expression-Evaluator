@@ -7,9 +7,9 @@ class Expr_Command
 {
 public: 
 
-  Expr_Command (Stack <int> & stack);
+  Expr_Command (void);
 
-  Expr_Command (Stack <int> & stack, int number);
+  Expr_Command (int number);
 
   ~Expr_Command (void);
 
@@ -18,9 +18,6 @@ public:
   virtual int getPrecedence (void) const = 0;
 
   virtual bool isOpeningParenthesis (void) = 0;
-
-protected:
-  Stack <int> stack_;
 };
 
 

@@ -6,7 +6,7 @@
 class Subtract_Command : public Binary_Op_Command
 {
 public:
-  Subtract_Command (Stack <int> & stack);
+  Subtract_Command (void);
   ~Subtract_Command (void);
   virtual int evaluate (int num1, int num2) const;
   virtual int getPrecedence (void) const;

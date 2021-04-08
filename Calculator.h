@@ -56,6 +56,26 @@ public:
    */
   bool evaluate_postfix (Array <Expr_Command *> & postfix, Stack <int> & stack);
 
+  /**
+   * Evaluates an input token and returns a Expression Command object
+   * 
+   * @param[in]     token     A string read in from user input
+   * @param[in]     factory   A factory for generating the Expression Command objects
+   * 
+   * @return        The expression command for the token
+   */
+  Expr_Command * evaluate_token (std::string token, Expr_Command_Factory & factory);
+
+  /**
+   * Evaluates an input Expression command and sends it where it belongs
+   * 
+   * @param[in]     command     The Expression Command
+   * @param[in]     postfix     The array which will hold the postfix expression
+   * @param[in]     tempStack   The stack holding all of the operators until they can be moved to postfix array
+   * 
+   */
+  void evaluate_command (Expr_Command * command, Array <Expr_Command *> & postfix, Stack <Expr_Command *> * tempStack);
+
   int run (void);
 };
 

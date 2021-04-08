@@ -3,8 +3,7 @@
 //
 // Initializing Constructor
 //
-Expr_Command::Expr_Command (Stack <int> & stack)
-: stack_ (stack)
+Expr_Command::Expr_Command (void)
 {
   // Nothing here
 }
@@ -12,8 +11,7 @@ Expr_Command::Expr_Command (Stack <int> & stack)
 //
 // Initializing constructor
 //
-Expr_Command::Expr_Command (Stack <int> & stack, int number)
-: stack_ (stack)
+Expr_Command::Expr_Command (int number)
 {
   // Nothing here
 }

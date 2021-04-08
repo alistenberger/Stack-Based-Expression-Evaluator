@@ -1,7 +1,7 @@
 #include "Add_Command.h"
 
-Add_Command::Add_Command (Stack <int> & stack)
-: Binary_Op_Command (stack)
+Add_Command::Add_Command (void)
+: Binary_Op_Command ()
 {
   // Nothing here
 }

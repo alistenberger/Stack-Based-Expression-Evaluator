@@ -6,7 +6,7 @@
 class Multiply_Command : public Binary_Op_Command
 {
 public:
-  Multiply_Command (Stack <int> & stack);
+  Multiply_Command (void);
   ~Multiply_Command (void);
   virtual int evaluate (int num1, int num2) const;
   virtual int getPrecedence (void) const;

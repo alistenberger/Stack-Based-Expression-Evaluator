@@ -1,7 +1,7 @@
 #include "Modulus_Command.h"
 
-Modulus_Command::Modulus_Command (Stack <int> & stack)
-: Binary_Op_Command (stack)
+Modulus_Command::Modulus_Command (void)
+: Binary_Op_Command ()
 {
   //Nothing here
 }

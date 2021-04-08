@@ -7,7 +7,7 @@
 class Parenthesis_Command : public Expr_Command
 {
 public:
-  Parenthesis_Command (Stack <int> & stack);
+  Parenthesis_Command (void);
   ~Parenthesis_Command (void);
   virtual bool execute (Stack <int> & stack);
   bool isOpeningParenthesis (void);
@@ -15,8 +15,6 @@ public:
   virtual int getPrecedence (void) const;
 
 private:
-  
-  Stack <int> stack_;
   bool openingParenthesis;
   int precedence = 3;
 };

@@ -8,7 +8,7 @@ class Binary_Op_Command : public Expr_Command
 { 
 public:
 
-  Binary_Op_Command (Stack <int> & stack);
+  Binary_Op_Command (void);
 
   bool execute (Stack <int> & stack);
 

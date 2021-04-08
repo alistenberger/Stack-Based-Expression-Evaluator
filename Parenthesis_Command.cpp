@@ -1,7 +1,7 @@
 #include "Parenthesis_Command.h"
 
-Parenthesis_Command::Parenthesis_Command (Stack <int> & stack)
-: Expr_Command (stack)
+Parenthesis_Command::Parenthesis_Command (void)
+: Expr_Command ()
 {
   //Nothing here
 }
@@ -13,9 +13,6 @@ Parenthesis_Command::~Parenthesis_Command (void)
 
 bool Parenthesis_Command::execute (Stack <int> & stack)
 {
-  if (this->isOpeningParenthesis ()) {
-    stack.push ('(');
-  }
   return true;
 }
 
@@ -23,8 +20,9 @@ bool Parenthesis_Command::isOpeningParenthesis (void)
 {
   if (this->openingParenthesis == true) {
     return true;
+  } else {
+    return false;
   }
-  return false;
 }
 
 void Parenthesis_Command::setOpeningParenthesis (bool response)

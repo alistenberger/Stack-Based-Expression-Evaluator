@@ -1,7 +1,7 @@
 #include "Subtract_Command.h"
 
-Subtract_Command::Subtract_Command (Stack <int> & stack)
-: Binary_Op_Command (stack)
+Subtract_Command::Subtract_Command (void)
+: Binary_Op_Command ()
 {
   // Nothing here
 }
