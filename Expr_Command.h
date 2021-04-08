@@ -15,7 +15,7 @@ public:
 
   virtual bool execute (Stack <int> & stack) = 0; 
 
-  virtual int getPrecedence (void) const = 0;
+  virtual const int getPrecedence (void) const = 0;
 
   virtual bool isOpeningParenthesis (void) = 0;
 };

@@ -18,7 +18,7 @@ bool Number_Command::execute (Stack <int> & stack)
   return true;
 }
 
-int Number_Command::getPrecedence (void) const
+const int Number_Command::getPrecedence (void) const
 {
   return this->precedence;
 }

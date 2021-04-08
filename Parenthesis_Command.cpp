@@ -30,7 +30,7 @@ void Parenthesis_Command::setOpeningParenthesis (bool response)
   this->openingParenthesis = response;
 }
 
-int Parenthesis_Command::getPrecedence (void) const
+const int Parenthesis_Command::getPrecedence (void) const
 {
   return this->precedence;
 }

@@ -9,11 +9,11 @@ public:
   Multiply_Command (void);
   ~Multiply_Command (void);
   virtual int evaluate (int num1, int num2) const;
-  virtual int getPrecedence (void) const;
+  virtual const int getPrecedence (void) const;
   virtual bool isOpeningParenthesis (void);
 
 private:
-  int precedence = 2;
+  const int precedence = 2;
 };
 
 #endif // !defined _MULTIPLY_COMMAND_H_

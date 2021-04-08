@@ -9,11 +9,11 @@ public:
   Subtract_Command (void);
   ~Subtract_Command (void);
   virtual int evaluate (int num1, int num2) const;
-  virtual int getPrecedence (void) const;
+  virtual const int getPrecedence (void) const;
   virtual bool isOpeningParenthesis (void);
 
 private:
-  int precedence = 1;
+  const int precedence = 1;
 };
 
 #endif // !defined _SUBTRACT_COMMAND_H_

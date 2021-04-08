@@ -12,11 +12,11 @@ public:
   virtual bool execute (Stack <int> & stack);
   bool isOpeningParenthesis (void);
   void setOpeningParenthesis (bool response);
-  virtual int getPrecedence (void) const;
+  virtual const int getPrecedence (void) const;
 
 private:
   bool openingParenthesis;
-  int precedence = 3;
+  const int precedence = 3;
 };
 
 #endif // !defined _PARENTHESIS_COMMAND_H_

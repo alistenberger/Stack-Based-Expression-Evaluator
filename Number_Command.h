@@ -10,12 +10,12 @@ public:
   Number_Command (int number);
   ~Number_Command (void);
   virtual bool execute (Stack <int> & stack);
-  virtual int getPrecedence (void) const;
+  virtual const int getPrecedence (void) const;
   virtual bool isOpeningParenthesis (void);
 
 private:
   int number_;
-  int precedence = 0;
+  const int precedence = 0;
 };
 
 #endif // !defined _NUMBER_COMMAND_H_

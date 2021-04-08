@@ -16,7 +16,7 @@ int Subtract_Command::evaluate (int num1, int num2) const
   return num1-num2;
 }
 
-int Subtract_Command::getPrecedence (void) const
+const int Subtract_Command::getPrecedence (void) const
 {
   return this->precedence;
 }

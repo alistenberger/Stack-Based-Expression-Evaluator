@@ -14,7 +14,7 @@ public:
 
   virtual int evaluate (int num1, int num2) const = 0; 
 
-  virtual int getPrecedence (void) const = 0;
+  virtual const int getPrecedence (void) const = 0;
 
   virtual bool isOpeningParenthesis (void) = 0;
 }; 
