@@ -21,6 +21,12 @@ const int Modulus_Command::getPrecedence (void) const
   return this->precedence;
 }
 
-bool Modulus_Command::isOpeningParenthesis (void) {
+bool Modulus_Command::isOpeningParenthesis (void) 
+{
   return false;
+}
+
+std::string Modulus_Command::getValue (void)
+{
+  return this->value;
 }

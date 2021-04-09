@@ -3,6 +3,7 @@
 
 #include "Expr_Command.h"
 #include "Stack.h"
+#include <string>
 
 class Binary_Op_Command : public Expr_Command 
 { 
@@ -17,6 +18,8 @@ public:
   virtual const int getPrecedence (void) const = 0;
 
   virtual bool isOpeningParenthesis (void) = 0;
+
+  virtual std::string getValue (void) = 0;
 }; 
 
 #endif // !defined _BINARY_OP_COMMAND_H_

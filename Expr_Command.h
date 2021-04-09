@@ -2,6 +2,7 @@
 #define _EXPR_COMMAND_H_
 
 #include "Stack.h"
+#include <string>
 
 class Expr_Command
 {
@@ -18,6 +19,8 @@ public:
   virtual const int getPrecedence (void) const = 0;
 
   virtual bool isOpeningParenthesis (void) = 0;
+
+  virtual std::string getValue (void) = 0;
 };
 
 

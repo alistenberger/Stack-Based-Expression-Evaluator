@@ -21,6 +21,12 @@ const int Subtract_Command::getPrecedence (void) const
   return this->precedence;
 }
 
-bool Subtract_Command::isOpeningParenthesis (void) {
+bool Subtract_Command::isOpeningParenthesis (void) 
+{
   return false;
+}
+
+std::string Subtract_Command::getValue (void)
+{
+  return this->value;
 }

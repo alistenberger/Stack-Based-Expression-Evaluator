@@ -21,6 +21,12 @@ const int Multiply_Command::getPrecedence (void) const
   return this->precedence;
 }
 
-bool Multiply_Command::isOpeningParenthesis (void) {
+bool Multiply_Command::isOpeningParenthesis (void) 
+{
   return false;
+}
+
+std::string Multiply_Command::getValue (void)
+{
+  return this->value;
 }

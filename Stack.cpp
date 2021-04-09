@@ -73,7 +73,9 @@ void Stack <T>::pop (void)
         this->arr_.set (i, this->arr_.get (i));
       }
     } else {
-      this->clear ();
+      this->current_size_ -= 1;
+      this->arr_.resize (this->current_size_);
+      this->arr_.shrink ();
     }
   }  
 }

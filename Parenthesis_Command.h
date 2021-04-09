@@ -3,6 +3,7 @@
 
 #include "Expr_Command.h"
 #include "Stack.h"
+#include <string>
 
 class Parenthesis_Command : public Expr_Command
 {
@@ -13,10 +14,12 @@ public:
   bool isOpeningParenthesis (void);
   void setOpeningParenthesis (bool response);
   virtual const int getPrecedence (void) const;
+  virtual std::string getValue (void);
 
 private:
   bool openingParenthesis;
   const int precedence = 3;
+  std::string value = "Parenthesis";
 };
 
 #endif // !defined _PARENTHESIS_COMMAND_H_

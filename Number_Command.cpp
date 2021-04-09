@@ -23,6 +23,12 @@ const int Number_Command::getPrecedence (void) const
   return this->precedence;
 }
 
-bool Number_Command::isOpeningParenthesis (void) {
+bool Number_Command::isOpeningParenthesis (void) 
+{
   return false;
+}
+
+std::string Number_Command::getValue (void)
+{
+  return this->value;
 }

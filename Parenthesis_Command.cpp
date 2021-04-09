@@ -34,3 +34,8 @@ const int Parenthesis_Command::getPrecedence (void) const
 {
   return this->precedence;
 }
+
+std::string Parenthesis_Command::getValue (void)
+{
+  return this->value;
+}

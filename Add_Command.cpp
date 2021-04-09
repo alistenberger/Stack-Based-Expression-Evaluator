@@ -21,6 +21,12 @@ const int Add_Command::getPrecedence (void) const
   return this->precedence;
 }
 
-bool Add_Command::isOpeningParenthesis (void) {
+bool Add_Command::isOpeningParenthesis (void) 
+{
   return false;
+}
+
+std::string Add_Command::getValue (void)
+{
+  return this->value;
 }

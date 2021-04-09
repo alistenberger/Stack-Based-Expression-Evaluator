@@ -24,3 +24,8 @@ const int Divide_Command::getPrecedence (void) const
 bool Divide_Command::isOpeningParenthesis (void) {
   return false;
 }
+
+std::string Divide_Command::getValue (void)
+{
+  return this->value;
+}
