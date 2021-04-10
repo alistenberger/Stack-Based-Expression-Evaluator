@@ -36,7 +36,7 @@ current_size_ (stack.arr_.size ())
 template <typename T>
 Stack <T>::~Stack (void)
 {
-  //Nothing allocated
+  std::cout << "deleting stack" << std::endl;
 }
 
 //
@@ -45,9 +45,8 @@ Stack <T>::~Stack (void)
 template <typename T>
 void Stack <T>::push (T element)
 {
-  this->arr_.resize (this->current_size_ + 1);
+  this->arr_.append (element);
   this->current_size_ += 1;
-  this->arr_.set (this->current_size_ - 1, element);
 }
 
 //

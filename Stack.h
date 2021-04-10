@@ -15,6 +15,7 @@
 
 #include <exception>
 #include "Array.h"
+#include <iostream>
 
 /**
  * @class Stack

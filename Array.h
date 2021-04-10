@@ -19,6 +19,7 @@
 
 #include "Base_Array.h"
 #include <cstring>          // for size_t definition
+#include <iostream>
 
 /**
  * @class Array

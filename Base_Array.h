@@ -2,6 +2,8 @@
 #define _BASE_ARRAY_H_
 
 #include <cstring>          // for size_t definition
+#include <memory>
+#include <iostream>
 
 /**
  * @class Base_Array
