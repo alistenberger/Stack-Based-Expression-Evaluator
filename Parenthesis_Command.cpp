@@ -8,7 +8,7 @@ Parenthesis_Command::Parenthesis_Command (void)
 
 Parenthesis_Command::~Parenthesis_Command (void)
 {
-  // Nothing allocated
+  //Nothing here
 }
 
 bool Parenthesis_Command::execute (Stack <int> & stack)

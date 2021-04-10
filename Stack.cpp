@@ -36,7 +36,7 @@ current_size_ (stack.arr_.size ())
 template <typename T>
 Stack <T>::~Stack (void)
 {
-  std::cout << "deleting stack" << std::endl;
+  //Nothing here
 }
 
 //
