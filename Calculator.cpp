@@ -59,8 +59,22 @@ bool Calculator::infix_to_postfix (const std::string & infix, Expr_Command_Facto
           if (tempCommand->getPrecedence () == 3) {
             break;
           }
-          postfix.append (tempCommand);
+          token = tempCommand->getValue ();
+          if (token == "+") {
+            tempCommand = factory.create_add_command ();
+          } else if (token == "-") { 
+            tempCommand = factory.create_subtract_command ();
+          } else if (token == "*") {
+            tempCommand = factory.create_multiply_command ();
+          } else if (token == "/") {
+            tempCommand = factory.create_divide_command ();
+          } else if (token == "%") {
+            tempCommand = factory.create_modulus_command ();
+          }
+          postfix.append (tempCommand); //invalid write here
+          tempCommand = tempStack.top ();
           tempStack.pop ();
+          delete tempCommand;
           if (tempStack.is_empty ()) {
             break;
           }
@@ -76,8 +90,23 @@ bool Calculator::infix_to_postfix (const std::string & infix, Expr_Command_Facto
       } else {
         tempCommand = tempStack.top ();
         while (!tempCommand->isOpeningParenthesis ()) {
-          postfix.append (tempCommand);
+          tempCommand = tempStack.top ();
+          token = tempCommand->getValue ();
+          if (token == "+") {
+            tempCommand = factory.create_add_command ();
+          } else if (token == "-") { 
+            tempCommand = factory.create_subtract_command ();
+          } else if (token == "*") {
+            tempCommand = factory.create_multiply_command ();
+          } else if (token == "/") {
+            tempCommand = factory.create_divide_command ();
+          } else if (token == "%") {
+            tempCommand = factory.create_modulus_command ();
+          }
+          postfix.append (tempCommand); //invalid write here
+          tempCommand = tempStack.top ();
           tempStack.pop ();
+          delete tempCommand;
           tempCommand = tempStack.top ();
         }
       //Now pop the opening parenthesis from the stack and delete it
@@ -112,6 +141,7 @@ bool Calculator::evaluate_postfix (Array <Expr_Command *> & postfix, Stack <int>
   typedef ArrayIterator <Expr_Command *> Expr_Command_Iterator; 
   for (Expr_Command_Iterator iterator (postfix); !iterator.isDone (); iterator.advance ()) {
     (*iterator)->execute (stack);
+    std::cout << "Executing iterator: " << ((*iterator)->getValue ()) << std::endl;
     delete *iterator;
   }
   return true;

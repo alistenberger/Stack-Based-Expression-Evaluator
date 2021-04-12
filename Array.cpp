@@ -117,14 +117,19 @@ const T & Array <T>::operator [] (size_t index) const
 template <typename T>
 void Array <T>::resize (size_t new_size)
 {
-  if (new_size >= this->max_size_) { 
-    Array newArr = Array (new_size);
-    for (int i = 0; i < this->max_size_; i++) {
-      T thisLocation = this->data_[i];
-      T newArrLocation = newArr.data_[i];
-      newArrLocation = thisLocation;
+  if (new_size >= this->cur_size_) { 
+    this->cur_size_ = new_size;
+    if (new_size > this->max_size_) {
+      this->max_size_ = new_size;
     }
-    (*this) = newArr;
+    T * tempData = new T [new_size];
+    for (int i = 0; i < this->cur_size_; i++) {
+      T * thisLocation = &this->data_[i];
+      T * newLocation = &tempData[i];
+      *newLocation = *thisLocation;
+    }
+    delete this->data_;
+    this->data_ = tempData;
   } else if (this->cur_size_ > new_size) { 
     this->cur_size_ = new_size; //if cur_size_ is > than new size, current size is made smaller, however as per the requirements, the original contents are preserved
   }
