@@ -41,6 +41,12 @@ bool Calculator::infix_to_postfix (const std::string & infix, Expr_Command_Facto
         command = factory.create_number_command (tempInt);
       }
     }
+      
+      
+      // COMMENT: Improve the design of your commands to reduce the design
+      // complexity of this method. Right now, there are too many if-else
+      // statements, and a lot of duplicate code.
+      
     //Evaluate first for number commands as these are placed directly into postfix, without any additional logic
     if (command->getPrecedence () == 0) {
       postfix.append (command);

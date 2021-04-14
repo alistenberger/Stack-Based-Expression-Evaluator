@@ -5,6 +5,9 @@
 #include "Stack.h"
 #include <string>
 
+// COMMENT: Create a design that does not require having parenthesis as
+// as command object since parenthesis are not executed.
+
 class Parenthesis_Command : public Expr_Command
 {
 public:
