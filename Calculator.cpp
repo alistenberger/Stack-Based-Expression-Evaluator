@@ -59,22 +59,8 @@ bool Calculator::infix_to_postfix (const std::string & infix, Expr_Command_Facto
           if (tempCommand->getPrecedence () == 3) {
             break;
           }
-          token = tempCommand->getValue ();
-          if (token == "+") {
-            tempCommand = factory.create_add_command ();
-          } else if (token == "-") { 
-            tempCommand = factory.create_subtract_command ();
-          } else if (token == "*") {
-            tempCommand = factory.create_multiply_command ();
-          } else if (token == "/") {
-            tempCommand = factory.create_divide_command ();
-          } else if (token == "%") {
-            tempCommand = factory.create_modulus_command ();
-          }
-          postfix.append (tempCommand); //invalid write here
-          tempCommand = tempStack.top ();
+          postfix.append (tempCommand);
           tempStack.pop ();
-          delete tempCommand;
           if (tempStack.is_empty ()) {
             break;
           }
@@ -90,23 +76,8 @@ bool Calculator::infix_to_postfix (const std::string & infix, Expr_Command_Facto
       } else {
         tempCommand = tempStack.top ();
         while (!tempCommand->isOpeningParenthesis ()) {
-          tempCommand = tempStack.top ();
-          token = tempCommand->getValue ();
-          if (token == "+") {
-            tempCommand = factory.create_add_command ();
-          } else if (token == "-") { 
-            tempCommand = factory.create_subtract_command ();
-          } else if (token == "*") {
-            tempCommand = factory.create_multiply_command ();
-          } else if (token == "/") {
-            tempCommand = factory.create_divide_command ();
-          } else if (token == "%") {
-            tempCommand = factory.create_modulus_command ();
-          }
-          postfix.append (tempCommand); //invalid write here
-          tempCommand = tempStack.top ();
+          postfix.append (tempCommand);
           tempStack.pop ();
-          delete tempCommand;
           tempCommand = tempStack.top ();
         }
       //Now pop the opening parenthesis from the stack and delete it
