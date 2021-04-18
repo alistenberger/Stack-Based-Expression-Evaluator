@@ -134,19 +134,15 @@ int Calculator::run (void) {
     if (infix == "QUIT") {
       break;
     }
-    std::cout << "Processing..." << std::endl;
+    std::cout << std::endl << "Processing..." << std::endl << std::endl;
     Stack <int> result = Stack <int> ();
     Stack <int> factoryStack = Stack <int> ();
     Stack_Expr_Command_Factory factory (factoryStack);
     Array <Expr_Command *> postfix = Array <Expr_Command *> ();
-    std::cout << "Passing equation to calculator" << std::endl;
-    std::cout << "Converting infix to postfix" << std::endl;
     this->infix_to_postfix (infix, factory, postfix);
-    std::cout << "Evaluating postfix expression..." << std::endl;
     this->evaluate_postfix (postfix, result);
-    std::cout << "postfix evaluated" << std::endl;
     int answer = result.top ();
-    std::cout << "Answer to equation: " << infix << " is: " << answer << std::endl;
+    std::cout << std::endl << "Answer to equation: " << infix << " is: " << answer << std::endl << std::endl;
   }
   return 0;
 }
