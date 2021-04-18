@@ -120,7 +120,6 @@ bool Calculator::evaluate_postfix (Array <Expr_Command *> & postfix, Stack <int>
   typedef ArrayIterator <Expr_Command *> Expr_Command_Iterator; 
   for (Expr_Command_Iterator iterator (postfix); !iterator.isDone (); iterator.advance ()) {
     (*iterator)->execute (stack);
-    std::cout << "Executing iterator: " << ((*iterator)->getValue ()) << std::endl;
     delete *iterator;
   }
   return true;
