@@ -1,311 +1,350 @@
 alistenberger@DESKTOP-2EAMK2Q:~/csci36300/project3$ valgrind --leak-check=yes ./assignment3
-==4452== Memcheck, a memory error detector
-==4452== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==4452== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==4452== Command: ./assignment3
-==4452==
-==4452== error calling PR_SET_PTRACER, vgdb might block
+==1640== Memcheck, a memory error detector
+==1640== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1640== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1640== Command: ./assignment3
+==1640==
+==1640== error calling PR_SET_PTRACER, vgdb might block
 Please enter an expression to be evaluated or type 'QUIT' to exit:
-( 5 + 3 ) % 3 * ( 4 * 4 ) / ( 2 - 3 )
+( 5 + ( 3 * 5 ) ) / 4 % 3 - 1 * ( 3 * 5 ) + 4
 Processing...
 Passing equation to calculator
 Converting infix to postfix
-==4452== Invalid write of size 8
-==4452==    at 0x10D31A: Base_Array<Expr_Command*>::set(unsigned long, Expr_Command*) (Base_Array.cpp:130)
-==4452==    by 0x10D44F: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:230)
-==4452==    by 0x10D462: Stack<Expr_Command*>::push(Expr_Command*) (Stack.cpp:48)
-==4452==    by 0x10C869: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:54)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid write of size 8
-==4452==    at 0x10D31A: Base_Array<Expr_Command*>::set(unsigned long, Expr_Command*) (Base_Array.cpp:130)
-==4452==    by 0x10D44F: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:230)
-==4452==    by 0x10C7CF: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:46)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcae88 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10CD12: Calculator::run() (Calculator.cpp:133)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 8
-==4452==    at 0x10D37C: Base_Array<Expr_Command*>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10D483: Stack<Expr_Command*>::top() const (Stack.cpp:105)
-==4452==    by 0x10C904: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:77)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid write of size 8
-==4452==    at 0x10D31A: Base_Array<Expr_Command*>::set(unsigned long, Expr_Command*) (Base_Array.cpp:130)
-==4452==    by 0x10D44F: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:230)
-==4452==    by 0x10C91D: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcae90 is 8 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10CD12: Calculator::run() (Calculator.cpp:133)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid write of size 8
-==4452==    at 0x10D31A: Base_Array<Expr_Command*>::set(unsigned long, Expr_Command*) (Base_Array.cpp:130)
-==4452==    by 0x10D44F: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:230)
-==4452==    by 0x10C8A6: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:62)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaea0 is 16 bytes after a block of size 16 in arena "client"
-==4452==
-==4452== Invalid write of size 8
-==4452==    at 0x10D31A: Base_Array<Expr_Command*>::set(unsigned long, Expr_Command*) (Base_Array.cpp:130)
-==4452==    by 0x10D44F: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:230)
-==4452==    by 0x10D462: Stack<Expr_Command*>::push(Expr_Command*) (Stack.cpp:48)
-==4452==    by 0x10C8F5: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:74)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 8
-==4452==    at 0x10D37C: Base_Array<Expr_Command*>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10D483: Stack<Expr_Command*>::top() const (Stack.cpp:105)
-==4452==    by 0x10C832: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:53)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 8
-==4452==    at 0x10D37C: Base_Array<Expr_Command*>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10D483: Stack<Expr_Command*>::top() const (Stack.cpp:105)
-==4452==    by 0x10C849: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:53)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 8
-==4452==    at 0x10D37C: Base_Array<Expr_Command*>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10DA8D: Stack<Expr_Command*>::pop() (Stack.cpp:72)
-==4452==    by 0x10C925: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:80)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid write of size 8
-==4452==    at 0x10D31A: Base_Array<Expr_Command*>::set(unsigned long, Expr_Command*) (Base_Array.cpp:130)
-==4452==    by 0x10DA9B: Stack<Expr_Command*>::pop() (Stack.cpp:72)
-==4452==    by 0x10C925: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:80)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 8
-==4452==    at 0x10D37C: Base_Array<Expr_Command*>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10D483: Stack<Expr_Command*>::top() const (Stack.cpp:105)
-==4452==    by 0x10C92D: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:81)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 8
-==4452==    at 0x10D37C: Base_Array<Expr_Command*>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10D483: Stack<Expr_Command*>::top() const (Stack.cpp:105)
-==4452==    by 0x10C946: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:84)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcaf48 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10C57F: Stack (Stack.cpp:14)
-==4452==    by 0x10C57F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
-==4452==    by 0x10CE65: Calculator::run() (Calculator.cpp:136)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
+==1640== Invalid read of size 4
+==1640==    at 0x10BBB8: Array<int>::resize(unsigned long) (Array.cpp:129)
+==1640==    by 0x10D4F3: Array<int>::append(int) (Array.cpp:234)
+==1640==    by 0x10C5F1: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:29)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcaf90 is 0 bytes after a block of size 0 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BCA3: Base_Array<int>::Base_Array(unsigned long) (Base_Array.cpp:19)
+==1640==    by 0x10C56B: Array (Array.cpp:27)
+==1640==    by 0x10C56B: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:21)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BBD0: Array<int>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10D4F3: Array<int>::append(int) (Array.cpp:234)
+==1640==    by 0x10C5F1: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:29)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcaf90 is 0 bytes after a block of size 0 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BCA3: Base_Array<int>::Base_Array(unsigned long) (Base_Array.cpp:19)
+==1640==    by 0x10C56B: Array (Array.cpp:27)
+==1640==    by 0x10C56B: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:21)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D46C: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcae80 is 0 bytes inside a block of size 8 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D643: Base_Array (Base_Array.cpp:8)
+==1640==    by 0x10D643: Array<Expr_Command*>::Array() (Array.cpp:16)
+==1640==    by 0x10CD3E: Calculator::run() (Calculator.cpp:141)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D46C: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C8F3: push (Stack.cpp:48)
+==1640==    by 0x10C8F3: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:84)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcaf40 is 0 bytes inside a block of size 8 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D643: Base_Array (Base_Array.cpp:8)
+==1640==    by 0x10D643: Array<Expr_Command*>::Array() (Array.cpp:16)
+==1640==    by 0x10C553: Stack (Stack.cpp:14)
+==1640==    by 0x10C553: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:20)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 4
+==1640==    at 0x10BBB8: Array<int>::resize(unsigned long) (Array.cpp:129)
+==1640==    by 0x10D4F3: Array<int>::append(int) (Array.cpp:234)
+==1640==    by 0x10C602: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:31)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcafd4 is 0 bytes after a block of size 4 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BB9E: Array<int>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D4F3: Array<int>::append(int) (Array.cpp:234)
+==1640==    by 0x10C5F1: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:29)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BBD0: Array<int>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10D4F3: Array<int>::append(int) (Array.cpp:234)
+==1640==    by 0x10C602: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:31)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcafd0 is 0 bytes inside a block of size 4 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BB9E: Array<int>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D4F3: Array<int>::append(int) (Array.cpp:234)
+==1640==    by 0x10C5F1: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:29)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 8
+==1640==    at 0x10D452: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:129)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcb098 is 0 bytes after a block of size 8 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 8
+==1640==    at 0x10D452: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:129)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C8F3: push (Stack.cpp:48)
+==1640==    by 0x10C8F3: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:84)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcb158 is 0 bytes after a block of size 8 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C8F3: push (Stack.cpp:48)
+==1640==    by 0x10C8F3: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:84)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 8
+==1640==    at 0x10D462: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:126)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcb270 is 0 bytes after a block of size 16 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 8
+==1640==    at 0x10D462: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:126)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C683: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:43)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcb3f8 is 0 bytes after a block of size 24 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D46C: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C683: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:43)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcb3e0 is 0 bytes inside a block of size 24 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 8
+==1640==    at 0x10D462: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:126)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C99E: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:92)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcb7c0 is 0 bytes after a block of size 48 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D46C: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C99E: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:92)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcb790 is 0 bytes inside a block of size 48 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D46C: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C96F: push (Stack.cpp:48)
+==1640==    by 0x10C96F: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:96)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcb6d0 is 0 bytes inside a block of size 8 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C8F3: push (Stack.cpp:48)
+==1640==    by 0x10C8F3: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:84)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 8
+==1640==    at 0x10D452: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:129)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C683: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:43)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcc2c8 is 0 bytes after a block of size 104 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 8
+==1640==    at 0x10D462: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:126)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10CA07: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:110)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcc780 is 0 bytes after a block of size 128 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D46C: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10CA07: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:110)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcc700 is 0 bytes inside a block of size 128 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10D438: Array<Expr_Command*>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10D580: Array<Expr_Command*>::append(Expr_Command*) (Array.cpp:234)
+==1640==    by 0x10C886: Calculator::infix_to_postfix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Expr_Command_Factory&, Array<Expr_Command*>&) (Calculator.cpp:79)
+==1640==    by 0x10CE91: Calculator::run() (Calculator.cpp:144)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
 Evaluating postfix expression...
-==4452== Invalid read of size 8
-==4452==    at 0x10C161: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:114)
-==4452==    by 0x10CEED: Calculator::run() (Calculator.cpp:138)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcae88 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10CD12: Calculator::run() (Calculator.cpp:133)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid write of size 4
-==4452==    at 0x10BA6E: Base_Array<int>::set(unsigned long, int) (Base_Array.cpp:130)
-==4452==    by 0x10E0AF: append (Array.cpp:230)
-==4452==    by 0x10E0AF: push (Stack.cpp:48)
-==4452==    by 0x10E0AF: Number_Command::execute(Stack<int>&) (Number_Command.cpp:17)
-==4452==    by 0x10C16B: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:114)
-==4452==    by 0x10CEED: Calculator::run() (Calculator.cpp:138)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcade4 is 0 bytes after a block of size 4 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10CC7E: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10CC7E: Array (Array.cpp:16)
-==4452==    by 0x10CC7E: Stack (Stack.cpp:14)
-==4452==    by 0x10CC7E: Calculator::run() (Calculator.cpp:130)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 8
-==4452==    at 0x10C174: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:115)
-==4452==    by 0x10CEED: Calculator::run() (Calculator.cpp:138)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcae88 is 0 bytes after a block of size 8 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10D55B: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10D55B: Array<Expr_Command*>::Array() (Array.cpp:16)
-==4452==    by 0x10CD12: Calculator::run() (Calculator.cpp:133)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 4
-==4452==    at 0x10BA0C: Base_Array<int>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10BB7B: Stack<int>::top() const (Stack.cpp:105)
-==4452==    by 0x10B871: Binary_Op_Command::execute(Stack<int>&) (Binary_Op_Command.cpp:11)
-==4452==    by 0x10C16B: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:114)
-==4452==    by 0x10CEED: Calculator::run() (Calculator.cpp:138)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcade4 is 0 bytes after a block of size 4 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10CC7E: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10CC7E: Array (Array.cpp:16)
-==4452==    by 0x10CC7E: Stack (Stack.cpp:14)
-==4452==    by 0x10CC7E: Calculator::run() (Calculator.cpp:130)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 4
-==4452==    at 0x10BA0C: Base_Array<int>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10BE73: Stack<int>::pop() (Stack.cpp:72)
-==4452==    by 0x10B87C: Binary_Op_Command::execute(Stack<int>&) (Binary_Op_Command.cpp:12)
-==4452==    by 0x10C16B: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:114)
-==4452==    by 0x10CEED: Calculator::run() (Calculator.cpp:138)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcade4 is 0 bytes after a block of size 4 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10CC7E: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10CC7E: Array (Array.cpp:16)
-==4452==    by 0x10CC7E: Stack (Stack.cpp:14)
-==4452==    by 0x10CC7E: Calculator::run() (Calculator.cpp:130)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid write of size 4
-==4452==    at 0x10BA6E: Base_Array<int>::set(unsigned long, int) (Base_Array.cpp:130)
-==4452==    by 0x10BE80: Stack<int>::pop() (Stack.cpp:72)
-==4452==    by 0x10B87C: Binary_Op_Command::execute(Stack<int>&) (Binary_Op_Command.cpp:12)
-==4452==    by 0x10C16B: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:114)
-==4452==    by 0x10CEED: Calculator::run() (Calculator.cpp:138)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcade4 is 0 bytes after a block of size 4 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10CC7E: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10CC7E: Array (Array.cpp:16)
-==4452==    by 0x10CC7E: Stack (Stack.cpp:14)
-==4452==    by 0x10CC7E: Calculator::run() (Calculator.cpp:130)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid read of size 4
-==4452==    at 0x10BA0C: Base_Array<int>::get(unsigned long) const (Base_Array.cpp:115)
-==4452==    by 0x10BB7B: Stack<int>::top() const (Stack.cpp:105)
-==4452==    by 0x10B884: Binary_Op_Command::execute(Stack<int>&) (Binary_Op_Command.cpp:13)
-==4452==    by 0x10C16B: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:114)
-==4452==    by 0x10CEED: Calculator::run() (Calculator.cpp:138)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcade4 is 0 bytes after a block of size 4 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10CC7E: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10CC7E: Array (Array.cpp:16)
-==4452==    by 0x10CC7E: Stack (Stack.cpp:14)
-==4452==    by 0x10CC7E: Calculator::run() (Calculator.cpp:130)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
-==4452== Invalid write of size 4
-==4452==    at 0x10BA6E: Base_Array<int>::set(unsigned long, int) (Base_Array.cpp:130)
-==4452==    by 0x10B8CF: append (Array.cpp:230)
-==4452==    by 0x10B8CF: push (Stack.cpp:48)
-==4452==    by 0x10B8CF: Binary_Op_Command::execute(Stack<int>&) (Binary_Op_Command.cpp:16)
-==4452==    by 0x10C16B: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:114)
-==4452==    by 0x10CEED: Calculator::run() (Calculator.cpp:138)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==  Address 0x4dcade4 is 0 bytes after a block of size 4 alloc'd
-==4452==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4452==    by 0x10CC7E: Base_Array (Base_Array.cpp:8)
-==4452==    by 0x10CC7E: Array (Array.cpp:16)
-==4452==    by 0x10CC7E: Stack (Stack.cpp:14)
-==4452==    by 0x10CC7E: Calculator::run() (Calculator.cpp:130)
-==4452==    by 0x10B636: main (main.cpp:5)
-==4452==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BBD0: Array<int>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10E0D5: append (Array.cpp:234)
+==1640==    by 0x10E0D5: push (Stack.cpp:48)
+==1640==    by 0x10E0D5: Number_Command::execute(Stack<int>&) (Number_Command.cpp:17)
+==1640==    by 0x10C131: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:122)
+==1640==    by 0x10CF19: Calculator::run() (Calculator.cpp:146)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcade0 is 0 bytes inside a block of size 4 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10CCAA: Base_Array (Base_Array.cpp:8)
+==1640==    by 0x10CCAA: Array (Array.cpp:16)
+==1640==    by 0x10CCAA: Stack (Stack.cpp:14)
+==1640==    by 0x10CCAA: Calculator::run() (Calculator.cpp:138)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 4
+==1640==    at 0x10BBB8: Array<int>::resize(unsigned long) (Array.cpp:129)
+==1640==    by 0x10E0D5: append (Array.cpp:234)
+==1640==    by 0x10E0D5: push (Stack.cpp:48)
+==1640==    by 0x10E0D5: Number_Command::execute(Stack<int>&) (Number_Command.cpp:17)
+==1640==    by 0x10C131: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:122)
+==1640==    by 0x10CF19: Calculator::run() (Calculator.cpp:146)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcc934 is 0 bytes after a block of size 4 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BB9E: Array<int>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10E0D5: append (Array.cpp:234)
+==1640==    by 0x10E0D5: push (Stack.cpp:48)
+==1640==    by 0x10E0D5: Number_Command::execute(Stack<int>&) (Number_Command.cpp:17)
+==1640==    by 0x10C131: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:122)
+==1640==    by 0x10CF19: Calculator::run() (Calculator.cpp:146)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Invalid read of size 4
+==1640==    at 0x10BBC6: Array<int>::resize(unsigned long) (Array.cpp:126)
+==1640==    by 0x10E0D5: append (Array.cpp:234)
+==1640==    by 0x10E0D5: push (Stack.cpp:48)
+==1640==    by 0x10E0D5: Number_Command::execute(Stack<int>&) (Number_Command.cpp:17)
+==1640==    by 0x10C131: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:122)
+==1640==    by 0x10CF19: Calculator::run() (Calculator.cpp:146)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcc988 is 0 bytes after a block of size 8 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BB9E: Array<int>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10E0D5: append (Array.cpp:234)
+==1640==    by 0x10E0D5: push (Stack.cpp:48)
+==1640==    by 0x10E0D5: Number_Command::execute(Stack<int>&) (Number_Command.cpp:17)
+==1640==    by 0x10C131: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:122)
+==1640==    by 0x10CF19: Calculator::run() (Calculator.cpp:146)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
+==1640== Mismatched free() / delete / delete []
+==1640==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BBD0: Array<int>::resize(unsigned long) (Array.cpp:131)
+==1640==    by 0x10B8B7: append (Array.cpp:234)
+==1640==    by 0x10B8B7: push (Stack.cpp:48)
+==1640==    by 0x10B8B7: Binary_Op_Command::execute(Stack<int>&) (Binary_Op_Command.cpp:16)
+==1640==    by 0x10C131: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:122)
+==1640==    by 0x10CF19: Calculator::run() (Calculator.cpp:146)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==  Address 0x4dcc9d0 is 0 bytes inside a block of size 12 alloc'd
+==1640==    at 0x483C583: operator new[](unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1640==    by 0x10BB9E: Array<int>::resize(unsigned long) (Array.cpp:125)
+==1640==    by 0x10E0D5: append (Array.cpp:234)
+==1640==    by 0x10E0D5: push (Stack.cpp:48)
+==1640==    by 0x10E0D5: Number_Command::execute(Stack<int>&) (Number_Command.cpp:17)
+==1640==    by 0x10C131: Calculator::evaluate_postfix(Array<Expr_Command*>&, Stack<int>&) (Calculator.cpp:122)
+==1640==    by 0x10CF19: Calculator::run() (Calculator.cpp:146)
+==1640==    by 0x10B636: main (main.cpp:5)
+==1640==
 postfix evaluated
-Answer to equation: ( 5 + 3 ) % 3 * ( 4 * 4 ) / ( 2 - 3 ) is: -32
+Answer to equation: ( 5 + ( 3 * 5 ) ) / 4 % 3 - 1 * ( 3 * 5 ) + 4 is: -9
 Please enter an expression to be evaluated or type 'QUIT' to exit:
 QUIT
-==4452==
-==4452== HEAP SUMMARY:
-==4452==     in use at exit: 0 bytes in 0 blocks
-==4452==   total heap usage: 106 allocs, 106 frees, 83,678 bytes allocated
-==4452==
-==4452== All heap blocks were freed -- no leaks are possible
-==4452==
-==4452== For lists of detected and suppressed errors, rerun with: -s
-==4452== ERROR SUMMARY: 73 errors from 20 contexts (suppressed: 0 from 0)
+==1640==
+==1640== HEAP SUMMARY:
+==1640==     in use at exit: 0 bytes in 0 blocks
+==1640==   total heap usage: 121 allocs, 121 frees, 84,174 bytes allocated
+==1640==
+==1640== All heap blocks were freed -- no leaks are possible
+==1640==
+==1640== For lists of detected and suppressed errors, rerun with: -s
+==1640== ERROR SUMMARY: 73 errors from 21 contexts (suppressed: 0 from 0)
+alistenberger@DESKTOP-2EAMK2Q:~/csci36300/project3$
